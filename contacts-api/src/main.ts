@@ -1,11 +1,11 @@
 import server from './server'
-import ContactRouter from './presentation/routes/contact-router'
+import ContactRouter from './presentation/routers/contact-router'
 import { GetAllContacts } from './domain/use-cases/contact/get-all-contacts'
 import { ContactRepositoryImpl } from './domain/repositories/contact-repository'
 import { CreateContact } from './domain/use-cases/contact/create-contact'
 import { MongoClient } from 'mongodb'
-import { DatabaseWrapper } from './domain/interfaces/data-sources/database'
-import { MongoDBContactDataSource } from './domain/interfaces/data-sources/mongodb/mongodb-contact-data-source'
+import { DatabaseWrapper } from './data/interfaces/data-sources/database-wrapper'
+import { MongoDBContactDataSource } from './data/data-sources/mongodb/mongodb-contact-data-source'
 
 
 (async () => {

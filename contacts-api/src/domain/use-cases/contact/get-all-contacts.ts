@@ -1,6 +1,6 @@
 import { Contact } from "../../entities/contact";
 import { ContactRepository } from "../../interfaces/repositories/contact-repository";
-import { GetAllContactsUseCase } from "../../interfaces/use-cases/get-all-contacts";
+import { GetAllContactsUseCase } from "../../interfaces/use-cases/contact/get-all-contacts";
 
 export class GetAllContacts implements GetAllContactsUseCase {
     contactRepository: ContactRepository
