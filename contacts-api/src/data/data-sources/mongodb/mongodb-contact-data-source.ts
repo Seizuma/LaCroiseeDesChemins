@@ -1,4 +1,4 @@
-import { ContactDataSource } from "../../../data/data-sources/contact-data-source";
+import { ContactDataSource } from "../../../data/interfaces/data-sources/contact-data-source";
 import { DatabaseWrapper } from "../../../data/interfaces/data-sources/database-wrapper";
 import { Contact } from "../../../domain/entities/contact";
 
