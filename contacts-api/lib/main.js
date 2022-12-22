@@ -13,12 +13,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const server_1 = __importDefault(require("./server"));
-const contact_router_1 = __importDefault(require("./presentation/routes/contact-router"));
+const contact_router_1 = __importDefault(require("./presentation/routers/contact-router"));
 const get_all_contacts_1 = require("./domain/use-cases/contact/get-all-contacts");
 const contact_repository_1 = require("./domain/repositories/contact-repository");
 const create_contact_1 = require("./domain/use-cases/contact/create-contact");
 const mongodb_1 = require("mongodb");
-const mongodb_contact_data_source_1 = require("./domain/interfaces/data-sources/mongodb/mongodb-contact-data-source");
+const mongodb_contact_data_source_1 = require("./data/data-sources/mongodb/mongodb-contact-data-source");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const client = new mongodb_1.MongoClient("mongodb://localhost:27017/contacts");
     yield client.connect();
