@@ -23,13 +23,21 @@ export class File implements Node {
         this.parent = parent;
         this.printer = printer;
     }
-    isRoot():any{};
-    getName():any{};
-    getDepth():any{};
+    isRoot():boolean{
+        return false;
+    };
+    getName():string{
+        return "";
+    };
+    getDepth():number{
+        return 0;
+    };
     print():any{};
     sort1(fn: any):any{};
     sort():any{};
-    getParent(Node: Node):any{};
+    getParent(Node: Node):Node{
+        return Node;
+    };
 }
 
 
@@ -44,13 +52,21 @@ export class Folder implements Node {
         this.parent = parent;
         this.printer = printer;
     }
-    isRoot():any{};
-    getName():any{};
-    getDepth():any{};
+    isRoot():boolean{
+        return false;
+    };
+    getName():string{
+        return "";
+    };
+    getDepth():number{
+        return 0;
+    };
     print():any{};
     sort1(fn: any):any{};
     sort():any{};
-    getParent(Node: Node):any{};
+    getParent(Node: Node):Node{
+        return Node;
+    };
     has(node: Node):boolean{
         return false;
     };
@@ -66,26 +82,50 @@ export interface NodePrinter extends Node {
 
 export class NodeParser implements NodePrinter {
     print(node: Node):any{};
-    isRoot():any{};
-    getName():any{};
-    getDepth():any{};
-    getParent(Node: Node):any{};
+    isRoot():boolean{
+        return false;
+    };
+    getName():string{
+        return "";
+    };
+    getDepth():number{
+        return 0;
+    };
+    getParent(Node: Node):Node{
+        return Node;
+    };
     printer(NodePrinter: any):any{};
     parse(paths: String[], delimiter: String):any{};
 }
 
 export class SimplePrinter implements NodePrinter{
-    isRoot():any{};
-    getName():any{};
-    getDepth():any{};
-    getParent(Node: Node):any{};
+    isRoot():boolean{
+        return false;
+    };
+    getName():string{
+        return "";
+    };
+    getDepth():number{
+        return 0;
+    };
+    getParent(Node: Node):Node{
+        return Node;
+    };
     print(node: Node):any{};
 }
 
 export class TreePrinter implements NodePrinter{
-    isRoot():any{};
-    getName():any{};
-    getDepth():any{};
-    getParent(Node: Node):any{};
+    isRoot():boolean{
+        return false;
+    };
+    getName():string{
+        return "";
+    };
+    getDepth():number{
+        return 0;
+    };
+    getParent(Node: Node):Node{
+        return Node;
+    };
     print(node: Node):any{};
 }
