@@ -1,11 +1,6 @@
 import { Contact } from "../../domain/entities/contact";
-import { ContactDataSource } from "../interfaces/data-sources/ContactDataSource";
+import { ContactDataSource } from "../interfaces/data-sources/contact-data-source";
 import { ContactRepository } from "../interfaces/repositories/contact-repository";
-
-export interface ContactDataSource {
-    create(contact: Contact): Promise<boolean>;
-    getAll(): Promise<Contact[]>;
-}
 
 export class ContactRepositoryImpl implements ContactRepository {
     contactDataSource: ContactDataSource

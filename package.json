@@ -2,5 +2,8 @@
   "dependencies": {
     "mongodb": "^4.13.0",
     "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^4.0.7"
   }
 }
