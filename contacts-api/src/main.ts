@@ -20,10 +20,10 @@ import { MongoDBContactDataSource } from './data/data-sources/mongodb/mongodb-co
 
     const contactMiddleWare = ContactRouter(
         new GetAllContacts(new ContactRepositoryImpl(new MongoDBContactDataSource(contactDatabase))),
-        new CreateContact(new ContactRepositoryImpl(new MongoDBContactDataSource(contactDatabase))),
-    )
+        new CreateContact(new ContactRepositoryImpl(new MongoDBContactDataSource(contactDatabase)))
 
-    server.use("/contact", contactMiddleWare)
+    ) 
+    server.use("/", contactMiddleWare)
     server.listen(4000, () => console.log("Running on server"))
 
 })()

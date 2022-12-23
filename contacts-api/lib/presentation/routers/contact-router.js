@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 function ContactsRouter(getAllContactsUseCase, createContactUseCase) {
     const router = express_1.default.Router();
-    console.log("Router created");
-    router.get('/id', (res) => __awaiter(this, void 0, void 0, function* () {
+    router.get('/', (res) => __awaiter(this, void 0, void 0, function* () {
         try {
+            //console.log("Router created")
             const contacts = yield getAllContactsUseCase.execute();
             //res.render('id',{})
             res.send(contacts);
@@ -28,6 +28,7 @@ function ContactsRouter(getAllContactsUseCase, createContactUseCase) {
     }));
     router.post('/', (req, res) => __awaiter(this, void 0, void 0, function* () {
         try {
+            console.log("Router created");
             yield createContactUseCase.execute(req.body);
             res.statusCode = 201;
             res.json({ message: "Created" });

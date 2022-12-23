@@ -28,6 +28,7 @@ const mongodb_contact_data_source_1 = require("./data/data-sources/mongodb/mongo
         insertOne: (doc) => db.collection("contacts").insertOne(doc)
     };
     const contactMiddleWare = (0, contact_router_1.default)(new get_all_contacts_1.GetAllContacts(new contact_repository_1.ContactRepositoryImpl(new mongodb_contact_data_source_1.MongoDBContactDataSource(contactDatabase))), new create_contact_1.CreateContact(new contact_repository_1.ContactRepositoryImpl(new mongodb_contact_data_source_1.MongoDBContactDataSource(contactDatabase))));
-    server_1.default.use("/contact", contactMiddleWare);
+    console.log(contactMiddleWare);
+    server_1.default.use("/", contactMiddleWare);
     server_1.default.listen(4000, () => console.log("Running on server"));
 }))();

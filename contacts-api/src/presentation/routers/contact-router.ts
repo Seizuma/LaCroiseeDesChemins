@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { NextFunction } from 'express'
 import { Request, Response } from 'express'
 import { CreateContactUseCase } from '../../domain/interfaces/use-cases/contact/create-contact'
 import { GetAllContactsUseCase } from '../../domain/interfaces/use-cases/contact/get-all-contacts'
@@ -9,9 +9,9 @@ export default function ContactsRouter(
     createContactUseCase: CreateContactUseCase
 ) {
     const router = express.Router()
-    console.log("Router created")
-    router.get('/id', async (res: Response) => {
+    router.get('/', async (res: Response) => {
         try {
+            //console.log("Router created")
             const contacts = await getAllContactsUseCase.execute()
             //res.render('id',{})
             res.send(contacts)
@@ -22,6 +22,7 @@ export default function ContactsRouter(
 
     router.post('/', async (req: Request, res: Response) => {
         try {
+            console.log("Router created")
             await createContactUseCase.execute(req.body)
             res.statusCode = 201
             res.json({ message: "Created" })
