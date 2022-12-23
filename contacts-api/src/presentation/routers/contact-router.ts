@@ -13,6 +13,7 @@ export default function ContactsRouter(
     router.get('/', async (res: Response) => {
         try {
             const contacts = await getAllContactsUseCase.execute()
+            //res.render('id',{})
             res.send(contacts)
         } catch (err) {
             res.status(500).send({ message: "Error fetching data" })
