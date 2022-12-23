@@ -9,8 +9,8 @@ export default function ContactsRouter(
     createContactUseCase: CreateContactUseCase
 ) {
     const router = express.Router()
-
-    router.get('/', async (res: Response) => {
+    console.log("Router created")
+    router.get('/id', async (res: Response) => {
         try {
             const contacts = await getAllContactsUseCase.execute()
             //res.render('id',{})

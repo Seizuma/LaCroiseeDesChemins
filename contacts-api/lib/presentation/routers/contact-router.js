@@ -15,9 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 function ContactsRouter(getAllContactsUseCase, createContactUseCase) {
     const router = express_1.default.Router();
-    router.get('/', (res) => __awaiter(this, void 0, void 0, function* () {
+    console.log("Router created");
+    router.get('/id', (res) => __awaiter(this, void 0, void 0, function* () {
         try {
             const contacts = yield getAllContactsUseCase.execute();
+            //res.render('id',{})
             res.send(contacts);
         }
         catch (err) {
